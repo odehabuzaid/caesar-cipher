@@ -25,7 +25,7 @@ def test_encrypt_a_string_with__given_shift():
     
     assert all(results)
 
-@pytest.mark.skip('TODO')
+
 def test_decrypt_string_with_same_shift():
 
     actual = decrypt("bqqmf", 1)

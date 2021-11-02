@@ -16,8 +16,8 @@ def encrypt(text:str,key:int):
     return " ".join(cipher_words).lower()
     
 
-def decrypt(test:str,key:int):
-    pass
+def decrypt(text:str,key:int):
+    return encrypt(text, -key)
 
     
 def crack(test:str,key:int):
