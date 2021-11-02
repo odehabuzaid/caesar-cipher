@@ -1,15 +1,14 @@
-import pytest
-from caesar_cipher.caesar_cipher import crack, decrypt, encrypt
+from caesar_cipher.caesar_cipher import decrypt, encrypt
+from caesar_cipher.crack import crack
 
 """
 TODO:[X] encrypt a string with a given shift
 TODO:[X] decrypt a previously encrypted string with the same shift
 TODO:[X] encryption should handle upper and lower case letters
-TODO:[] encryption should allow non-alpha characters but ignore them, including white space
-TODO:[] decrypt encrypted version of It was the best of times, it was the worst of times. WITHOUT knowing the shift used.
-TODO:[] refer to supplied unit tests.
+TODO:[X] encryption should allow non-alpha characters but ignore them, including white space
+TODO:[X] decrypt encrypted version of It was the best of times, it was the worst of times. WITHOUT knowing the shift used.
+TODO:[X] refer to supplied unit tests.
 """
-
 
 def test_encrypt_a_string_with__given_shift():
     
@@ -25,7 +24,6 @@ def test_encrypt_a_string_with__given_shift():
     
     assert all(results)
 
-
 def test_decrypt_string_with_same_shift():
 
     actual = decrypt("bqqmf", 1)
@@ -39,7 +37,6 @@ def test_decrypt_string_with_same_shift():
     results.append(actual == expected)
     
     assert all(results)
-
 
 def test_encryption_handle_upper_lower_cahar_same_shift():
     actual = encrypt("BANANA", 10)
@@ -58,7 +55,7 @@ def test_ignore_nonalpha_chars():
     results.append(actual == expected)
     
     assert all(results)
-@pytest.mark.skip('TODO')    
+   
 def test_round_trip():
     original = "Gimme a 1!"
     shift = 5
@@ -66,21 +63,17 @@ def test_round_trip():
     actual = decrypt(encrypted, shift)
     expected = original
     assert actual == expected
-@pytest.mark.skip('TODO')    
+
 def test_decrypt_string_without_shift():
     phrase = "It was the best of times, it was the worst of times."
     encrypted = encrypt(phrase, 10)
     actual = crack(encrypted)
     expected = phrase
     assert actual == expected
-@pytest.mark.skip('TODO')
+
 def test_crack_nonsense():
     phrase = "Ix fhw txe fofg of ndhrl, it nad tho hndrk of allkd."
     encrypted = encrypt(phrase, 10)
     actual = crack(encrypted)
-    expected = ""
+    expected = None
     assert actual == expected
-
-
-
-

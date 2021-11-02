@@ -1,3 +1,4 @@
+import re
 
 
 def arrange(char,key):
@@ -10,9 +11,6 @@ def arrange(char,key):
     mod_num = shifted_num % 26 + offset
     
     return mod_num
-
-import re
-
 
 def encrypt(text:str,key:int):
     words = text.split()
@@ -27,9 +25,6 @@ def encrypt(text:str,key:int):
                 cipher += char
         cipher_words.append(cipher)    
     return " ".join(cipher_words)
-    
 
 def decrypt(text:str,key:int):
     return encrypt(text, -key)
-
-

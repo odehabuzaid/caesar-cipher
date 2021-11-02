@@ -18,5 +18,3 @@ def crack(text: str):
             
             if len(true_words) == len(list_of_words):
                 return "".join(decrypted)
-                    
-
