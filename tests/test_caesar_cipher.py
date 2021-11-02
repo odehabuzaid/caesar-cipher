@@ -1,5 +1,5 @@
 import pytest
-from caesar_cipher import crack, decrypt, encrypt
+from caesar_cipher.caesar_cipher import crack, decrypt, encrypt
 
 """
 TODO:[] encrypt a string with a given shift
@@ -10,8 +10,8 @@ TODO:[] decrypt encrypted version of It was the best of times, it was the worst 
 TODO:[] refer to supplied unit tests.
 """
 
-@pytest.mark.skip('TODO')
-def encrypt_a_string_with__given_shift():
+
+def test_encrypt_a_string_with__given_shift():
     
     actual = encrypt("apple", 1)
     expected = "bqqmf"
@@ -26,7 +26,7 @@ def encrypt_a_string_with__given_shift():
     assert all(results)
 
 @pytest.mark.skip('TODO')
-def decrypt_string_with_same_shift():
+def test_decrypt_string_with_same_shift():
 
     actual = decrypt("bqqmf", 1)
     expected = "apple"
@@ -40,12 +40,12 @@ def decrypt_string_with_same_shift():
     
     assert all(results)
 @pytest.mark.skip('TODO')
-def encryption_handle_upper_lower_cahar_same_shift():
+def test_encryption_handle_upper_lower_cahar_same_shift():
     actual = encrypt("BANana", 10)
     expected = "LKXkxk"
     assert actual == expected
 @pytest.mark.skip('TODO')
-def ignore_nonalpha_chars():
+def test_ignore_nonalpha_chars():
     actual = encrypt("apples and bananas", 1)
     expected = "bqqmft boe cbobobt"
     
@@ -66,7 +66,7 @@ def test_round_trip():
     expected = original
     assert actual == expected
 @pytest.mark.skip('TODO')    
-def decrypt_string_without_shift():
+def test_decrypt_string_without_shift():
     phrase = "It was the best of times, it was the worst of times."
     encrypted = encrypt(phrase, 10)
     actual = crack(encrypted)
