@@ -1,0 +1,6 @@
+*.lock
+board.ipynb
+
+__pycache__/
+
+.pytest_cache
