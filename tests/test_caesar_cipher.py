@@ -45,7 +45,7 @@ def test_encryption_handle_upper_lower_cahar_same_shift():
     actual = encrypt("BANANA", 10)
     expected = "LKXKXK"
     assert actual == expected
-@pytest.mark.skip('TODO')
+
 def test_ignore_nonalpha_chars():
     actual = encrypt("apples and bananas", 1)
     expected = "bqqmft boe cbobobt"
