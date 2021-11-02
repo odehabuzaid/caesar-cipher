@@ -2,9 +2,9 @@ import pytest
 from caesar_cipher.caesar_cipher import crack, decrypt, encrypt
 
 """
-TODO:[] encrypt a string with a given shift
-TODO:[] decrypt a previously encrypted string with the same shift
-TODO:[] encryption should handle upper and lower case letters
+TODO:[X] encrypt a string with a given shift
+TODO:[X] decrypt a previously encrypted string with the same shift
+TODO:[X] encryption should handle upper and lower case letters
 TODO:[] encryption should allow non-alpha characters but ignore them, including white space
 TODO:[] decrypt encrypted version of It was the best of times, it was the worst of times. WITHOUT knowing the shift used.
 TODO:[] refer to supplied unit tests.
@@ -39,10 +39,11 @@ def test_decrypt_string_with_same_shift():
     results.append(actual == expected)
     
     assert all(results)
-@pytest.mark.skip('TODO')
+
+
 def test_encryption_handle_upper_lower_cahar_same_shift():
-    actual = encrypt("BANana", 10)
-    expected = "LKXkxk"
+    actual = encrypt("BANANA", 10)
+    expected = "LKXKXK"
     assert actual == expected
 @pytest.mark.skip('TODO')
 def test_ignore_nonalpha_chars():
